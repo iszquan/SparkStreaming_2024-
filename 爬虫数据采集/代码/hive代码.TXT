@@ -1,0 +1,64 @@
+CREATE TABLE IF NOT EXISTS job_all_4_jtw(
+num INT,
+work_name STRING,
+location STRING,
+salary DOUBLE,
+work_year STRING,
+educate STRING,
+company_name STRING,
+company_type STRING,
+financing_conditions STRING,
+company_size STRING,
+city STRING
+)
+row format delimited fields terminated by "," 
+collection items terminated by "&" 
+stored as textfile; 
+
+全国人工智能职位数量分布情况
+hive (hive_final_jtw)> create table job_city_4_jtw
+                     > as
+                     > select city ,count(city) as quantity from job_all_4_jtw
+                     > group by city order by quantity desc;
+
+全国人工智能职位工作方向
+hive (hive_final_jtw)> CREATE TABLE job_direct_4_jtw AS
+                     > SELECT work_name, COUNT(work_name) AS quantity
+                     > FROM job_all_4_jtw
+                     > GROUP BY work_name
+                     > ORDER BY quantity DESC;
+
+全国人工智能职位公司规模
+hive (hive_final_jtw)> CREATE TABLE job_company_size_4_jtw AS
+                     > SELECT company_size, count(company_size) AS quantity 
+                     > FROM job_all_4_jtw
+                     > GROUP BY company_size
+                     > ORDER BY quantity DESC;
+
+
+全国人工智能职位工作学历要求
+hive (hive_final_jtw)> CREATE TABLE job_educate_4_jtw
+                     >  AS
+                     >  SELECT educate ,count(educate) AS quantity FROM job_all_4_jtw
+                     >  GROUP BY educate order by quantity desc; 
+
+
+
+全国人工智能职位工作经验要求
+hive (hive_final_jtw)>  CREATE TABLE job_work_year_4_jtw 
+                     >  AS
+                     >  SELECT work_year ,count(work_year) AS quantity FROM job_all_4_jtw
+                     >  GROUP BY work_year order by quantity desc;
+
+
+热门城市人工智能不同工作经验对应薪资
+hive (hive_final_jtw)> create TABLE job_work_year_salary_4_jtw
+                     > AS
+                     > select  round(avg(cast(salary as string)),1),work_year from job_all_4_jtw group by work_year order by work_year asc;
+
+热门城市人工智能不同学历对应薪资
+hive (hive_final_jtw)> CREATE TABLE job_educate_salary_4_jtw AS
+                     > SELECT ROUND(AVG(salary), 1) AS avg_salary, educate 
+                     > FROM job_all_4_jtw 
+                     > GROUP BY educate 
+                     > ORDER BY avg_salary ASC;

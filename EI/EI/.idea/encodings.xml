@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/CsvToKafka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CsvToKafka/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/publisher-realtime/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/publisher-realtime/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spark-realtime/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spark-realtime/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springbootEI/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springbootEI/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/数据可视化：基于 Echarts + Java SpringBoot 大数据就业信息可视化平台/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

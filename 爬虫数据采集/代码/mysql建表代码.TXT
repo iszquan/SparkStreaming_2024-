@@ -1,0 +1,78 @@
+use job_jtw;
+
+CREATE TABLE `job_all_4_jtw` (
+  `num` INT PRIMARY KEY,
+  `work_name` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `location` VARCHAR(255),
+  `salary` VARCHAR(255),
+  `work_year` VARCHAR(255),
+  `educate` VARCHAR(255),
+  `company_name` VARCHAR(255),
+  `company_type` VARCHAR(255),
+  `financing_conditions` VARCHAR(255),
+  `company_size` VARCHAR(255),
+  `city` VARCHAR(255)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+#全国人工智能职位数量分布情况
+create table job_city_4_jtw(
+city_name char(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+city_count int
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+#全国人工智能职位工作方向
+create table  job_direct_4_jtw(
+work_name char(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+work_count int
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+#全国人工智能职位公司规模
+create table job_company_size_4_jtw(
+company_size_name char(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+company_size_count int
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+#全国人工智能职位工作学历要求
+create table job_educate_4_jtw(
+educate_name char(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+educate_count int
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+#全国人工智能职位工作经验要求
+create table job_work_year_4_jtw (
+ work_year char(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+ work_year_count int
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+#热门城市人工智能不同工作经验对应薪资
+create table job_work_year_salary_4_jtw(
+work_year_name  char(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+avg_salary double
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+#热门城市人工智能不同学历对应薪资
+create table job_educate_salary_4_jtw(
+educate_name char(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+avg_salary double
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+#岗位薪资排行
+create table job_direct_salary_4_jtw(
+work_name char(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+avg_salary double
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+#工作要求
+create table job_skill_4_jtw(
+skills char(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+count int
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
